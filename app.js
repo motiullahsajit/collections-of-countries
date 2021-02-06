@@ -47,11 +47,6 @@ const renderCountryInfo = country => {
 
 }
 
-// const showBySearch = () => {
-//     let searchInput = document.getElementById('search-input');
-//     searchInput.value = countryName;
-//     console.log(countryName);
-// }
 
 function showBySearch() {
     let searchInput = document.getElementById('search-input');
