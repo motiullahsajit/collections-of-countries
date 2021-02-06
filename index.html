@@ -16,17 +16,19 @@
         <div class="container">
             <a class="navbar-brand">Countries Name</a>
             <form class="d-flex">
-                <input class="form-control me-2 w-auto" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success" type="submit">Search</button>
+                <input id="search-input" class="form-control me-2 w-auto" type="search" placeholder="Your Country Name"
+                    aria-label="Search">
+                <button onclick="showBySearch()" class="btn btn-outline-success" type="button">Search</button>
             </form>
         </div>
     </nav>
 
     <main class="container my-5">
-        <div id="country-detail" class="row g-5 row-cols-4 text-center">
-            <div id="countries">
+        <div id="country-detail" class="col-lg-3">
 
-            </div>
+        </div>
+        <div id="countries" class="row g-5 row-cols-4 text-center">
+
         </div>
     </main>
     <script src="app.js"></script>

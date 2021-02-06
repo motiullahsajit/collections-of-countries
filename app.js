@@ -32,7 +32,8 @@ const displayCountryDetail = (name) => {
 }
 
 const renderCountryInfo = country => {
-    console.log(country);
+    const countriesDiv = document.getElementById('countries');
+    countriesDiv.style.display = 'none';
     const countryDiv = document.getElementById('country-detail');
     countryDiv.innerHTML = `
     <div class="card">
@@ -45,3 +46,29 @@ const renderCountryInfo = country => {
     </div> `
 
 }
+
+// const showBySearch = () => {
+//     let searchInput = document.getElementById('search-input');
+//     searchInput.value = countryName;
+//     console.log(countryName);
+// }
+
+function showBySearch() {
+    let searchInput = document.getElementById('search-input');
+    fetch(`https://restcountries.eu/rest/v2/name/${searchInput.value}`)
+        .then(res => res.json())
+        .then(data => {
+            const countriesDiv = document.getElementById('countries');
+            countriesDiv.style.display = 'none';
+            const countryDiv = document.getElementById('country-detail');
+            countryDiv.innerHTML = `
+    <div class="card">
+    <img src="${data[0].flag}" alt="${data[0].name}">
+        <div class="card-body">
+        <h5 class="card-title">${data[0].name}</h5>
+        <p>Population: ${data[0].population}</p>
+        <p>Area: ${data[0].area}</p>
+        </div>
+    </div> `
+        })
+};
