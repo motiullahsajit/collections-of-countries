@@ -1,18 +1,51 @@
-#countries{
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-gap:30px;
+
+.details-card img{
+    height: 300px;
 }
-.country{
-    padding: 20px;
-    text-align: center;
-    width: 300px;
+/* popup */
+.popUpCls .overLay {
+    position:fixed;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    z-index:1;
+    display:none;
 }
-.country-name{
-    font-size: 40px;
-    color: lightsalmon;
+.popUpCls .popUp-Content {
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(0);
+    background:#fff;
+    z-index:2;
+    text-align:center;
+    padding:20px;
+    box-sizing:border-box;
+    border-radius: 10px;
+    color: rgb(92, 91, 91);
 }
-#country-detail img{
-    width: 100%;
-    height: 200px;
+.popUpCls .close-btn {
+    cursor:pointer;
+    position:absolute;
+    right:20px;
+    top:20px;
+    outline: none;
+    color:#000;
+    font-size:35px;
+    font-weight:600;
+    line-height:30px;
+    text-align:center;
+    border: none;
+    background-color:  rgba(255, 255, 255, 0);
+    color: #fff;    
+    z-index: 5;
+} 
+.popUpCls.active .overLay {
+    display:block;
+}
+.popUpCls.active .popUp-Content {
+    transition:all 300ms ease-in-out;
+    transform:translate(-50%,-50%) scale(1);
 }
